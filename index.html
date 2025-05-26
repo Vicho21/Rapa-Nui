@@ -361,10 +361,10 @@
     }
 
     .zoom-in {
-      touch-action: pan-x pan-y;
-      -ms-touch-action: pan-x pan-y;
-      cursor: grab;
-    }
+  touch-action: pan-x pan-y;
+  -ms-touch-action: pan-x pan-y;
+  cursor: grab;
+}
 
 @media (max-width: 768px) {
   .zoom-btn {
@@ -462,7 +462,6 @@
         <div class="page"><img src="pages/page80.jpg" /></div>
         <div class="page"><img src="pages/page81.jpg" /></div>
         <div class="page"><img src="pages/page82.jpg" /></div>
-        <div class="page"><img src="pages/page2.jpg" /></div>
         <div class="page"><img src="pages/page83.jpg" /></div>
       </div>
     </div>
@@ -490,7 +489,7 @@
       if (window.innerWidth <= 768) {
        document.querySelectorAll('.zoom-btn').forEach(btn => btn.remove());
       }
-      
+
       // Calculate responsive dimensions based on viewport
       function calculateDimensions() {
         const viewportWidth = window.innerWidth;
