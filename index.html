@@ -290,6 +290,16 @@
         padding: 20px;
       }
     }
+
+    .flipbook-viewport.zoomed {
+  cursor: grab;
+  overflow: auto !important;
+}
+
+.flipbook-viewport.zoomed:active {
+  cursor: grabbing;
+}
+    
   </style>
 </head>
 <body>
@@ -536,24 +546,27 @@
 
       // Initialize zoom functionality if not mobile
       if (!isMobile) {
-        $('.flipbook-viewport').zoom({
-          flipbook: flipbook,
-          max: 2.5,
-          when: {
-            swipeLeft: function () {
-              flipbook.turn('next');
-            },
-            swipeRight: function () {
-              flipbook.turn('previous');
-            },
-            zoomIn: function () {
-              flipbook.addClass('zoom-in');
-            },
-            zoomOut: function () {
-              flipbook.removeClass('zoom-in');
-            }
-          }
-        });
+       let zoomInstance = $('.flipbook-viewport').zoom({
+  flipbook: flipbook,
+  max: 2.5,
+  when: {
+    swipeLeft: function () {
+      flipbook.turn('next');
+    },
+    swipeRight: function () {
+      flipbook.turn('previous');
+    },
+    zoomIn: function () {
+      $('.flipbook-viewport').addClass('zoomed');
+      flipbook.addClass('zoom-in');
+    },
+    zoomOut: function () {
+      $('.flipbook-viewport').removeClass('zoomed');
+      flipbook.removeClass('zoom-in');
+    }
+  }
+});
+
 
         // Disable automatic zoom on double tap/click
         $('.flipbook-viewport').off('zoom.doubleTap');
