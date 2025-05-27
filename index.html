@@ -385,17 +385,11 @@
       </div>
     </div>
    <div class="controls">
-      <button class="zoom-btn" onclick="$('.flipbook-viewport').zoom('zoomIn')">
-        <img src="zoom_in.svg" alt="Zoom In" />
-      </button>
-      <button class="zoom-btn" onclick="$('.flipbook-viewport').zoom('zoomOut')">
-        <img src="zoom_out.svg" alt="Zoom Out" />
-      </button>
-
-      <a href="https://drive.google.com/uc?export=download&id=1btlHqvvNQ-6f-e5qFCarNmi0yAjeUxpU" class="btn-34" onclick="registrarDescarga()">
+      
+      <a href="https://drive.google.com/uc?export=download&id=1XMPwPlSIySYXPvJ0GBZStdHKAU13JlvT" class="btn-34" onclick="registrarDescarga()">
         <span>Descargar PDF</span>
       </a>
-      <a href="https://volunteeringrapanui.org" class="btn-34"><span>Sobre nosotros</span></a>
+      <a href="https://volunteeringrapanui.org" class="btn-34" onclick="registrarVisita()"><span>Sobre nosotros</span></a>
     </div>
   </div>
 
@@ -592,14 +586,24 @@
         });
       }
     }
+
+    function registrarVisita() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_sobre_nosotros', {
+          'event_category': 'Botón',
+          'event_label': 'Sobre Nosotros'
+        });
+      }
+    }
+    
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W27L8C7SS"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPZBWC8J0P"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'G-4W27L8C7SS');
+    gtag('config', 'G-QPZBWC8J0P');
   </script>
 </body>
 </html>
